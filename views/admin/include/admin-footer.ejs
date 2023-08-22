@@ -1,0 +1,50 @@
+<footer class="footer text-center text-sm-start">
+    <span class="text-muted d-none d-sm-inline-block float-end">Crafted with <i
+                class="mdi mdi-heart text-danger"></i> </span>
+    </footer><!--end footer-->
+</div>
+<!-- end page content -->
+</div>
+<!-- end page-wrapper -->
+<!-- jQuery  -->
+<script src="<%= nodeSiteUrl %>assets/js/jquery.min.js"></script>
+<script src="<%= nodeSiteUrl %>assets/js/bootstrap.bundle.min.js"></script>
+<script src="<%= nodeSiteUrl %>assets/js/metismenu.min.js"></script>
+<script src="<%= nodeSiteUrl %>assets/js/waves.js"></script>
+<script src="<%= nodeSiteUrl %>assets/js/feather.min.js"></script>
+<script src="<%= nodeSiteUrl %>assets/js/sweetalert.min.js"></script>
+<!-- Required datatable js -->
+<script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
+<!-- <script src="<%= nodeSiteUrl %>plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<%= nodeSiteUrl %>plugins/datatables/dataTables.bootstrap5.min.js"></script> -->
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+
+<!-- App js -->
+<script src="<%= nodeSiteUrl %>/assets/js/app.js"></script>
+<script src="<%= nodeSiteUrl %>assets/custom-js/ajax-call.js?v=1.1"></script>
+<script src="<%= nodeSiteUrl %>assets/custom-js/ajax-datatable.js"></script>
+<% if(typeof scriptFile !=="undefined"){ %>
+<script src="<%= nodeSiteUrl %>assets/custom-js/<%= scriptFile %>.js"></script>
+<% } %>
+
+<% if(typeof scriptFile !=="undefined" && scriptFile =="news"){ %>
+<script type="text/javascript" src="<%= nodeSiteUrl %>assets/ckeditor_ckfinder/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<%= nodeSiteUrl %>assets/ckeditor_ckfinder/ckfinder/ckfinder.js"></script>
+<script type="text/javascript">
+var baseUrl = '<%= nodeSiteUrl %>';
+var areas = Array('content');
+    $.each(areas, function (i, area) {
+    CKEDITOR.replace(area, {
+    filebrowserBrowseUrl :  baseUrl+'assets/ckeditor_ckfinder/ckfinder/ckfinder.html',
+    filebrowserImageBrowseUrl :  baseUrl+'assets/ckeditor_ckfinder/ckfinder/ckfinder.html?type=Images',
+    filebrowserFlashBrowseUrl :  baseUrl+'assets/ckeditor_ckfinder/ckfinder/ckfinder.html?type=Flash',
+    filebrowserUploadUrl : baseUrl+'assets/ckeditor_ckfinder/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+    filebrowserImageUploadUrl : baseUrl+'assets/ckeditor_ckfinder/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+    filebrowserFlashUploadUrl : baseUrl+'assets/ckeditor_ckfinder/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+    });
+});
+</script>
+<% } %>
+</body>
+</html>
